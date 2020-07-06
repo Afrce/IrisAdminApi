@@ -1,6 +1,5 @@
-*.yaml
+*.yml
 *.mod
 *.sum
 /vendor
-/config/application.yml
 .idea
