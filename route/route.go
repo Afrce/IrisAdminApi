@@ -10,4 +10,5 @@ import (
 */
 func RouteInit(app *iris.Application) {
 	app.Get("/", controller.Test)
+	app.Post("/login", controller.Login)
 }

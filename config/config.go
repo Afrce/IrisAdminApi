@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"github.com/jinzhu/configor"
 )
 
@@ -18,6 +17,7 @@ var Config = struct {
 		Port     string `env:"DBPort" default:"3306"`
 		User     string `env:"DBUser" default:"root"`
 		Password string `env:"DBPassword" default:"root"`
+		Prefix   string `default:""`
 	}
 }{}
 
@@ -26,5 +26,5 @@ func init() {
 	if err := configor.Load(&Config, configPath); err != nil {
 		panic(err)
 	}
-	fmt.Println(Config)
+	//fmt.Println(Config)
 }
