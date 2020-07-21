@@ -7,3 +7,7 @@ db:
   port: 3306
   user: root
   password: root
+
+jwt: 123456
+
+env: pro

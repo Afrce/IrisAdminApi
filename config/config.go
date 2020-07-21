@@ -19,6 +19,8 @@ var Config = struct {
 		Password string `env:"DBPassword" default:"root"`
 		Prefix   string `default:""`
 	}
+	Jwt string `default:"secret"`
+	Env string `default:"dev"`
 }{}
 
 func init() {
