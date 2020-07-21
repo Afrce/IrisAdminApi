@@ -15,4 +15,6 @@ func RouteInit(app *iris.Application) {
 
 	app.Use(middleware.CheckTokenHandler)
 	app.Post("/logout", controller.Logout)
+
+	app.Post("/test", middleware.RecordApiLog, controller.Test) // 測試下记录
 }

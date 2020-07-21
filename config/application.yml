@@ -10,4 +10,4 @@ db:
 
 jwt: 123456
 
-env: pro
+env: dev

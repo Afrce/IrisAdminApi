@@ -70,9 +70,9 @@ func Login(ctx iris.Context) {
 	// 生成对应的token返回
 
 	if aul.Remember == 1 {
-		expTime = time.Now().Add(time.Hour * 24 * 7)
+		expTime = time.Now().Local().Add(time.Hour * 24 * 7)
 	} else {
-		expTime = time.Now().Add(time.Hour * 12)
+		expTime = time.Now().Local().Add(time.Hour * 12)
 	}
 
 	stdClaims := jwt.StandardClaims{

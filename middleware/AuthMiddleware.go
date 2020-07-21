@@ -4,10 +4,8 @@ import (
 	"IrisAdminApi/config"
 	"IrisAdminApi/controller"
 	"IrisAdminApi/models"
-	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/kataras/iris"
-	"reflect"
 	"time"
 )
 
@@ -33,7 +31,6 @@ func CheckTokenHandler(ctx iris.Context) {
 
 	_, err := jwt.ParseWithClaims(token, &uClaims, func(token *jwt.Token) (i interface{}, e error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-			fmt.Println(token.Header["alg"])
 		}
 		return []byte(config.Config.Jwt), nil
 	})
@@ -46,7 +43,6 @@ func CheckTokenHandler(ctx iris.Context) {
 
 	exp := uClaims.Exp
 	uid := uClaims.Uid
-	fmt.Println(exp, reflect.TypeOf(exp), uid, reflect.TypeOf(uid))
 
 	// 比较有效时间
 	nowTime := time.Now().Unix()
