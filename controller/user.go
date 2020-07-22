@@ -118,3 +118,9 @@ func Logout(ctx iris.Context) {
 	_, _ = ctx.JSON(ReturnData("success", nil, "退出登录成功"))
 	return
 }
+
+// 用户相关操作
+
+// 头像更换
+
+// 密码更换
