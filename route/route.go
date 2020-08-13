@@ -16,5 +16,6 @@ func RouteInit(app *iris.Application) {
 	app.Use(middleware.CheckTokenHandler)
 	app.Post("/logout", controller.Logout)
 
+	app.Get("/permission/list", controller.GetPermissionData)
 	app.Post("/test", middleware.RecordApiLog, middleware.CheckUserPermission, controller.Test).Name = "test" // 測試下记录
 }
